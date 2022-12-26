@@ -54,11 +54,16 @@
 </script>
 
 <section
-  class="flex min-h-screen w-full items-end justify-start bg-brand-600 py-10 text-white lg:py-40"
+  class="relative flex min-h-screen w-full items-end justify-start bg-brand-600 py-10 text-white lg:py-40"
 >
+  <img
+    src="/images/kpb.jpg"
+    alt=""
+    class="pointer-events-none absolute inset-0 h-full w-full select-none object-cover opacity-30 grayscale"
+  />
   <div class="container w-full">
     <h1
-      class="text-7xl font-bold !leading-[0.9] !tracking-[-0.065em] lg:text-9xl"
+      class="relative text-7xl font-bold !leading-[0.9] !tracking-[-0.065em] drop-shadow-xl lg:text-9xl"
     >
       Kebajikan integrasi untuk yang kurang bernasib baik
     </h1>
