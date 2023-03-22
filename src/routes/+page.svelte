@@ -63,7 +63,7 @@
   />
   <div class="container w-full">
     <h1
-      class="relative text-7xl font-bold !leading-[0.9] !tracking-[-0.065em] drop-shadow-xl lg:text-9xl"
+      class="relative text-7xl font-bold !leading-[0.9] !tracking-tighter drop-shadow-xl lg:text-9xl"
     >
       Kebajikan integrasi untuk yang kurang bernasib baik
     </h1>
@@ -143,10 +143,24 @@
       </h3>
 
       <p class="text-3xl !leading-none tracking-tighter lg:text-4xl">
-        Sumbangan ikhlas untuk penghuni boleh disalurkan kepada akaun
+        Sumbangan ikhlas untuk penghuni boleh disalurkan melalui ToyyibPay
       </p>
 
-      <p class="mt-12 text-xl font-semibold tracking-tight lg:mt-24">
+      <button
+        on:click={() =>
+          window.open('https://toyyibpay.com/penyayangbakti', '_blank')}
+        class="mt-4 rounded-full bg-[#624ec4] px-8 py-6 text-3xl text-white"
+        ><img
+          src="/images/toyyibpay-logo-white.svg"
+          alt=""
+          class="h-8"
+        /></button
+      >
+
+      <p class="mt-12 text-lg font-semibold tracking-tight opacity-60 lg:mt-24">
+        Atau transaksi terus kepada akaun
+      </p>
+      <p class="text-2xl font-semibold tracking-tight">
         LEMBAGA PELAWAT KOMP PENYAYANG BAKTI
       </p>
       <p class="text-4xl font-extralight tracking-tighter">
