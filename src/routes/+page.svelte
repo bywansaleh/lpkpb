@@ -208,10 +208,10 @@
       Aktiviti &amp; Program
     </h3>
 
-    <div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
       {#each activities as activity}
         <div
-          class="flex flex-col justify-start rounded-3xl bg-gray-500/10 p-6 aspect-square"
+          class="flex flex-col justify-start rounded-xl bg-gray-500/10 p-4 md:rounded-3xl md:p-6 md:aspect-square"
           style:background-color={toRGB(activity.title).bg}
         >
           <h4
