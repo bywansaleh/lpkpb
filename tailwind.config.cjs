@@ -11,17 +11,7 @@ const config = {
     extend: {
       colors: {
         gray: colors.neutral,
-        brand: {
-          100: '#ffe9dc',
-          200: '#ffd3b8',
-          300: '#ffbd95',
-          400: '#ffa771',
-          500: '#ff914e',
-          600: '#cc743e',
-          700: '#99572f',
-          800: '#663a1f',
-          900: '#331d10',
-        },
+        brand: colors.teal[700],
       },
       fontFamily: {
         sans: ['Plus Jakarta Sans Variable', ...defaultTheme.fontFamily.sans],

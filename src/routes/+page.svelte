@@ -94,7 +94,7 @@
 </script>
 
 <section
-  class="relative flex min-h-screen w-full items-end justify-start bg-brand-600 py-10 text-white lg:py-40"
+  class="relative flex min-h-screen w-full items-end justify-start bg-brand py-10 text-white lg:py-40"
 >
   <img
     src="/images/kpb.jpg"
@@ -117,14 +117,14 @@
     </div>
     <div>
       <h2
-        class="text-6xl font-semibold !leading-[0.9] tracking-tight lg:text-7xl"
+        class="text-5xl font-semibold !leading-[0.9] tracking-tight lg:text-7xl"
         use:balancer
       >
         Kami percaya dengan masa depan yang lebih baik untuk setiap insan.
       </h2>
 
       <p
-        class="mt-16 text-3xl font-medium !leading-tight tracking-normal lg:text-4xl [&>span]:text-gray-500"
+        class="mt-16 text-2xl font-medium !leading-tight tracking-normal lg:text-4xl [&>span]:text-gray-400"
         use:balancer
       >
         Kompleks Penyayang BAKTI lahir atas dasar <span>kesedaran</span>
@@ -137,57 +137,61 @@
   </div>
 </section>
 
-<section class="bg-brand-600 py-10 text-center text-white lg:py-20">
+<section class="bg-brand py-10 text-white md:text-center lg:py-20">
   <div class="container">
-    <p
-      class="mx-auto mb-12 max-w-5xl text-2xl font-light !leading-tight tracking-normal lg:text-3xl"
-      use:balancer
-    >
-      Pewujudan kompleks ini adalah hasil gabungan tenaga Badan Amal Kebajikan
-      Tenaga Isteri (BAKTI) sebagai badan NGO yang membangun kompleks ini
-      bertarikh 6 Oktober 1997, Tetuan Yarisan Holdings Sdn Bhd (Swasta) dan
-      Jabatan Kebajikan Masyarakat Malaysia (JKM) yang memperuntukkan sebidah
-      tanah seluas 106,716 meter persegi sebagai tapak pembangunan kompleks.
-    </p>
+    <div class="mx-auto max-w-5xl">
+      <p
+        class="mb-8 text-xl font-light !leading-tight tracking-normal lg:text-3xl"
+        use:balancer
+      >
+        Pewujudan kompleks ini adalah hasil gabungan tenaga Badan Amal Kebajikan
+        Tenaga Isteri (BAKTI) sebagai badan NGO yang membangun kompleks ini
+        bertarikh 6 Oktober 1997, Tetuan Yarisan Holdings Sdn Bhd (Swasta) dan
+        Jabatan Kebajikan Masyarakat Malaysia (JKM) yang memperuntukkan sebidah
+        tanah seluas 106,716 meter persegi sebagai tapak pembangunan kompleks.
+      </p>
 
-    <p
-      class="mx-auto max-w-5xl text-3xl font-semibold !leading-tight tracking-normal lg:text-4xl"
-      use:balancer
-    >
-      Pakatan tiga pihak ini melambangkan keprihatinan setiap sektor masyarakat
-      Malaysia terhadap mereka yang kurang bernasib baik serta menjadi contoh
-      kerjasama yang unggul.
-    </p>
+      <p
+        class="text-2xl font-semibold !leading-tight tracking-normal lg:text-4xl"
+        use:balancer
+      >
+        Pakatan tiga pihak ini melambangkan keprihatinan setiap sektor
+        masyarakat Malaysia terhadap mereka yang kurang bernasib baik serta
+        menjadi contoh kerjasama yang unggul.
+      </p>
+    </div>
   </div>
 </section>
 
 <section class="bg-gray-800 py-10 text-white lg:py-20">
   <div class="container">
     <h3
-      class="mb-16 text-center text-5xl font-semibold tracking-tighter lg:text-7xl"
+      class="mb-16 text-center text-4xl font-semibold tracking-tighter lg:text-7xl"
     >
       Ahli Lembaga Pelawat
     </h3>
 
     <div class="flex flex-wrap justify-center">
       {#each members as member}
-        <div class="flex w-1/3 flex-col items-center p-12 text-center">
+        <div
+          class="flex w-full flex-col items-center p-6 text-center md:w-1/3 md:p-12"
+        >
           <div>
             <img
               src={member.picture}
               alt={member.name}
-              class="w-40 rounded-full bg-white object-cover object-top aspect-square"
+              class="w-32 rounded-full bg-white object-cover object-top aspect-square md:w-40"
             />
           </div>
           <div
-            class="mb-4 mt-6 text-2xl font-light !leading-tight"
+            class="mb-4 mt-6 text-lg font-light !leading-tight md:text-2xl"
             use:balancer
           >
             {member.name}
           </div>
-          <div class="text-sm">
+          <div class="">
             <span
-              class="rounded-full bg-white p-1 px-3 font-bold text-gray-800"
+              class="rounded-full bg-white p-1 px-3 text-xs font-bold text-gray-800 md:text-sm"
             >
               {member.position}
             </span>
@@ -201,7 +205,7 @@
 <section class="bg-gray-900 py-20 text-white">
   <div class="container">
     <h3
-      class="mb-16 text-center text-5xl font-semibold tracking-tighter lg:text-7xl"
+      class="mb-16 text-center text-4xl font-semibold tracking-tighter lg:text-7xl"
     >
       Aktiviti &amp; Program
     </h3>
@@ -227,11 +231,11 @@
 <section class="bg-white py-20">
   <div class="container grid grid-cols-1 items-center gap-6 md:grid-cols-2">
     <div>
-      <h3 class="mb-4 text-5xl font-black tracking-tight lg:text-7xl">
+      <h3 class="mb-4 text-4xl font-semibold tracking-tighter lg:text-7xl">
         Mari Menyumbang
       </h3>
 
-      <p class="text-3xl !leading-none lg:text-4xl">
+      <p class="text-2xl !leading-none lg:text-4xl">
         Sumbangan ikhlas untuk penghuni boleh disalurkan melalui ToyyibPay
       </p>
 
@@ -246,11 +250,15 @@
         /></button
       >
 
-      <p class="mt-12 text-lg font-semibold opacity-60 lg:mt-24">
+      <p class="mb-2 mt-12 text-lg font-semibold opacity-60 lg:mt-24">
         Atau transaksi terus kepada akaun
       </p>
-      <p class="text-2xl font-semibold">LEMBAGA PELAWAT KOMP PENYAYANG BAKTI</p>
-      <p class="text-4xl font-extralight">564397002361 (Maybank Islamic)</p>
+      <p class="text-lg font-semibold !leading-snug md:text-2xl">
+        LEMBAGA PELAWAT KOMP PENYAYANG BAKTI
+      </p>
+      <p class="text-2xl font-extralight md:text-4xl">
+        564397002361 (Maybank Islamic)
+      </p>
       <img
         src="/images/maybank-islamic.png"
         alt=""
