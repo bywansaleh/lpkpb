@@ -24,7 +24,7 @@ const config = {
         },
       },
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        sans: ['Plus Jakarta Sans Variable', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
         '9xl': '9rem',

@@ -63,7 +63,7 @@
   />
   <div class="container w-full">
     <h1
-      class="relative text-7xl font-bold !leading-[0.9] !tracking-tighter drop-shadow-xl lg:text-9xl"
+      class="relative text-7xl font-extrabold !leading-[0.9] !tracking-tighter drop-shadow-xl lg:text-9xl"
     >
       Kebajikan integrasi untuk yang kurang bernasib baik
     </h1>
@@ -76,12 +76,14 @@
       <img src="/images/hands.jpg" alt="" class="rounded-3xl grayscale" />
     </div>
     <div>
-      <h2 class="text-6xl font-semibold tracking-tighter lg:text-7xl">
+      <h2
+        class="text-6xl font-semibold !leading-[0.9] tracking-tight lg:text-7xl"
+      >
         Kami percaya dengan masa depan yang lebih baik untuk setiap insan.
       </h2>
 
       <p
-        class="mt-16 text-3xl font-medium tracking-tighter lg:text-4xl [&>span]:text-gray-500"
+        class="mt-16 text-3xl font-medium !leading-tight tracking-normal lg:text-4xl [&>span]:text-gray-500"
       >
         Kompleks Penyayang BAKTI lahir atas dasar <span>kesedaran</span>
         terhadap perlunya <span>sebuah institusi</span> yang memberikan
@@ -95,7 +97,9 @@
 
 <section class="bg-brand-600 py-10 text-white lg:py-20">
   <div class="container">
-    <p class="mb-12 max-w-3xl text-2xl font-light tracking-tight lg:text-3xl">
+    <p
+      class="mb-12 max-w-3xl text-2xl font-light !leading-tight tracking-normal lg:text-3xl"
+    >
       Pewujudan kompleks ini adalah hasil gabungan tenaga Badan Amal Kebajikan
       Tenaga Isteri (BAKTI) sebagai badan NGO yang membangun kompleks ini
       bertarikh 6 Oktober 1997, Tetuan Yarisan Holdings Sdn Bhd (Swasta) dan
@@ -103,8 +107,10 @@
       tanah seluas 106,716 meter persegi sebagai tapak pembangunan kompleks.
     </p>
 
-    <p class="max-w-3xl text-3xl font-normal tracking-tighter lg:text-4xl">
-      Pakatan Tiga Pihak ini melambangkan keprihatinan setiap sektor masyarakat
+    <p
+      class="max-w-3xl text-3xl font-semibold !leading-tight tracking-normal lg:text-4xl"
+    >
+      Gabungan tiga pihak ini melambangkan keprihatinan setiap sektor masyarakat
       Malaysia terhadap mereka yang kurang bernasib baik serta menjadi contoh
       kerjasama yang unggul.
     </p>
@@ -138,11 +144,11 @@
 <section class="bg-white py-20">
   <div class="container grid grid-cols-1 items-center gap-6 md:grid-cols-2">
     <div>
-      <h3 class="mb-4 text-5xl font-semibold tracking-tighter lg:text-7xl">
+      <h3 class="mb-4 text-5xl font-black tracking-tight lg:text-7xl">
         Mari Menyumbang
       </h3>
 
-      <p class="text-3xl !leading-none tracking-tighter lg:text-4xl">
+      <p class="text-3xl !leading-none lg:text-4xl">
         Sumbangan ikhlas untuk penghuni boleh disalurkan melalui ToyyibPay
       </p>
 
@@ -157,15 +163,11 @@
         /></button
       >
 
-      <p class="mt-12 text-lg font-semibold tracking-tight opacity-60 lg:mt-24">
+      <p class="mt-12 text-lg font-semibold opacity-60 lg:mt-24">
         Atau transaksi terus kepada akaun
       </p>
-      <p class="text-2xl font-semibold tracking-tight">
-        LEMBAGA PELAWAT KOMP PENYAYANG BAKTI
-      </p>
-      <p class="text-4xl font-extralight tracking-tighter">
-        564397002361 (Maybank Islamic)
-      </p>
+      <p class="text-2xl font-semibold">LEMBAGA PELAWAT KOMP PENYAYANG BAKTI</p>
+      <p class="text-4xl font-extralight">564397002361 (Maybank Islamic)</p>
       <img
         src="/images/maybank-islamic.png"
         alt=""
@@ -185,7 +187,7 @@
 
 <footer class="bg-gray-900 py-10 text-white">
   <div class="container">
-    <div class="font-medium tracking-tight">
+    <div class="font-medium">
       &copy; {new Date().getFullYear()}
       Kompleks Penyayang Bakti, Jalan SD 13/4, Persiaran Meranti, Bandar Sri Damansara,
       52200 Kuala Lumpur. Tel: 03-6277 8684 / 03-6277 8093
