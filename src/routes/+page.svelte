@@ -124,7 +124,7 @@
       </h2>
 
       <p
-        class="mt-16 text-2xl font-medium !leading-tight tracking-normal lg:text-4xl [&>span]:text-gray-400"
+        class="mt-16 text-2xl font-semibold !leading-tight tracking-normal lg:text-4xl [&>span]:text-gray-400"
         use:balancer
       >
         Kompleks Penyayang BAKTI lahir atas dasar <span>kesedaran</span>
@@ -139,10 +139,9 @@
 
 <section class="bg-brand py-10 text-white md:text-center lg:py-20">
   <div class="container">
-    <div class="mx-auto max-w-5xl">
+    <div class="mx-auto max-w-5xl" use:balancer>
       <p
         class="mb-8 text-xl font-light !leading-tight tracking-normal lg:text-3xl"
-        use:balancer
       >
         Pewujudan kompleks ini adalah hasil gabungan tenaga Badan Amal Kebajikan
         Tenaga Isteri (BAKTI) sebagai badan NGO yang membangun kompleks ini
@@ -153,7 +152,6 @@
 
       <p
         class="text-2xl font-semibold !leading-tight tracking-normal lg:text-4xl"
-        use:balancer
       >
         Pakatan tiga pihak ini melambangkan keprihatinan setiap sektor
         masyarakat Malaysia terhadap mereka yang kurang bernasib baik serta
@@ -250,14 +248,16 @@
         /></button
       >
 
-      <p class="mb-2 mt-12 text-lg font-semibold opacity-60 lg:mt-24">
+      <p class="mb-2 mt-12 text-lg font-semibold opacity-60 lg:mt-16">
         Atau transaksi terus kepada akaun
       </p>
-      <p class="text-lg font-semibold !leading-snug md:text-2xl">
+      <p class="text-base font-bold md:text-lg">Maybank Islamic</p>
+      <p class="mb-2 text-2xl font-extralight md:text-4xl">564397002361</p>
+      <p
+        class="mb-6 text-lg
+       font-semibold !leading-snug md:text-2xl"
+      >
         LEMBAGA PELAWAT KOMP PENYAYANG BAKTI
-      </p>
-      <p class="text-2xl font-extralight md:text-4xl">
-        564397002361 (Maybank Islamic)
       </p>
       <img
         src="/images/maybank-islamic.png"
