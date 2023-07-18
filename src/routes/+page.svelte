@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { balancer } from 'svelte-action-balancer';
+
   const activities = [
     { title: 'Program Bacaan Yaasin' },
     { title: 'Gotong-Royong Pembasmian Nyamuk Aedes' },
@@ -20,6 +22,44 @@
     {
       title:
         'Penghuni bersama Jabatan Pendaftaran Negara Cawangan Negeri Selangor',
+    },
+  ];
+
+  const members = [
+    {
+      name: 'Prof Madya Dr Rusdi Bin Abd Rashid',
+      position: 'Pengerusi',
+      picture: '/images/drrusdi.png',
+    },
+    {
+      name: 'Nurulhuda Binti Md Yunus',
+      position: 'Setiausaha',
+      picture: '/images/huda.png',
+    },
+    {
+      name: 'Nik Haslina Binti Nik Ibrahim',
+      position: 'Bendahari',
+      picture: '/images/nikhaslina.png',
+    },
+    {
+      name: 'Dr Harris Shah Bin Abd Hamid',
+      position: 'Ahli',
+      picture: '/images/drharris.png',
+    },
+    {
+      name: 'Noor Aieda Binti Ahmad',
+      position: 'Ahli',
+      picture: '/images/aieda.png',
+    },
+    {
+      name: 'Ahmad Syukry Bin Ibrahim',
+      position: 'Ahli',
+      picture: '/images/syukri.png',
+    },
+    {
+      name: 'Muhammad Hazamin Bin Harun',
+      position: 'Ahli',
+      picture: '/images/hazamin.png',
     },
   ];
 
@@ -78,12 +118,14 @@
     <div>
       <h2
         class="text-6xl font-semibold !leading-[0.9] tracking-tight lg:text-7xl"
+        use:balancer
       >
         Kami percaya dengan masa depan yang lebih baik untuk setiap insan.
       </h2>
 
       <p
         class="mt-16 text-3xl font-medium !leading-tight tracking-normal lg:text-4xl [&>span]:text-gray-500"
+        use:balancer
       >
         Kompleks Penyayang BAKTI lahir atas dasar <span>kesedaran</span>
         terhadap perlunya <span>sebuah institusi</span> yang memberikan
@@ -95,10 +137,11 @@
   </div>
 </section>
 
-<section class="bg-brand-600 py-10 text-white lg:py-20">
+<section class="bg-brand-600 py-10 text-center text-white lg:py-20">
   <div class="container">
     <p
-      class="mb-12 max-w-3xl text-2xl font-light !leading-tight tracking-normal lg:text-3xl"
+      class="mx-auto mb-12 max-w-5xl text-2xl font-light !leading-tight tracking-normal lg:text-3xl"
+      use:balancer
     >
       Pewujudan kompleks ini adalah hasil gabungan tenaga Badan Amal Kebajikan
       Tenaga Isteri (BAKTI) sebagai badan NGO yang membangun kompleks ini
@@ -108,18 +151,58 @@
     </p>
 
     <p
-      class="max-w-3xl text-3xl font-semibold !leading-tight tracking-normal lg:text-4xl"
+      class="mx-auto max-w-5xl text-3xl font-semibold !leading-tight tracking-normal lg:text-4xl"
+      use:balancer
     >
-      Gabungan tiga pihak ini melambangkan keprihatinan setiap sektor masyarakat
+      Pakatan tiga pihak ini melambangkan keprihatinan setiap sektor masyarakat
       Malaysia terhadap mereka yang kurang bernasib baik serta menjadi contoh
       kerjasama yang unggul.
     </p>
   </div>
 </section>
 
+<section class="bg-gray-800 py-10 text-white lg:py-20">
+  <div class="container">
+    <h3
+      class="mb-16 text-center text-5xl font-semibold tracking-tighter lg:text-7xl"
+    >
+      Ahli Lembaga Pelawat
+    </h3>
+
+    <div class="flex flex-wrap justify-center">
+      {#each members as member}
+        <div class="flex w-1/3 flex-col items-center p-12 text-center">
+          <div>
+            <img
+              src={member.picture}
+              alt={member.name}
+              class="w-40 rounded-full bg-white object-cover object-top aspect-square"
+            />
+          </div>
+          <div
+            class="mb-4 mt-6 text-2xl font-light !leading-tight"
+            use:balancer
+          >
+            {member.name}
+          </div>
+          <div class="text-sm">
+            <span
+              class="rounded-full bg-white p-1 px-3 font-bold text-gray-800"
+            >
+              {member.position}
+            </span>
+          </div>
+        </div>
+      {/each}
+    </div>
+  </div>
+</section>
+
 <section class="bg-gray-900 py-20 text-white">
   <div class="container">
-    <h3 class="mb-16 text-5xl font-semibold tracking-tighter lg:text-7xl">
+    <h3
+      class="mb-16 text-center text-5xl font-semibold tracking-tighter lg:text-7xl"
+    >
       Aktiviti &amp; Program
     </h3>
 

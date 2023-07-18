@@ -18,6 +18,7 @@ specifiers:
   prettier-plugin-svelte: ^2.10.1
   prettier-plugin-tailwindcss: ^0.4.1
   svelte: ^4.0.5
+  svelte-action-balancer: ^1.0.4
   svelte-check: ^3.4.6
   svelte-preprocess: ^5.0.4
   tailwindcss: ^3.3.3
@@ -43,6 +44,7 @@ devDependencies:
   prettier-plugin-svelte: 2.10.1_z35f3ohsxdc2466aze4bydpgay
   prettier-plugin-tailwindcss: 0.4.1_nq22rkvkw4bm7cjexvoehrc5dq
   svelte: 4.0.5
+  svelte-action-balancer: 1.0.4
   svelte-check: 3.4.6_6c4ejk5iu4pr24knjc7cs72kgq
   svelte-preprocess: 5.0.4_ytatwqtm7axepcgw6uskl3ooru
   tailwindcss: 3.3.3
@@ -1916,6 +1918,10 @@ packages:
   /supports-preserve-symlinks-flag/1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+    dev: true
+
+  /svelte-action-balancer/1.0.4:
+    resolution: {integrity: sha512-QEJ/UJ576/wt+Sr3Uhswg/6k1s98034QZQBbO3WuNeyPYKa+9w2z/W5SFlusdAi8H7IF+s8BaMptEsUZINfxbw==}
     dev: true
 
   /svelte-check/3.4.6_6c4ejk5iu4pr24knjc7cs72kgq:
