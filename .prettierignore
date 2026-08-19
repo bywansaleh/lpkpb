@@ -2,6 +2,8 @@
 node_modules
 .vscode
 .astro
+/dist
+# Legacy artifact path from the previous Astro configuration.
 /build
 /package
 .env

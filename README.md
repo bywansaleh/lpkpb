@@ -41,4 +41,4 @@ pnpm preview   # preview the production build locally
 - `public/images` — source images and payment logos served at `/images/*`
 
 The site uses Astro's static output; `pnpm build` writes the deployable output
-to `build/`.
+to `dist/`.

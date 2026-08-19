@@ -1,5 +1,7 @@
 .DS_Store
 node_modules
+/dist
+# Legacy artifact path from the previous Astro configuration.
 /build
 /.astro
 /package
