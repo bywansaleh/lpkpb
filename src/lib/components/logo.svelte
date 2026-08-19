@@ -1,11 +1,11 @@
 <div class="leading-none text-white">
-  <div class="text-sm font-medium !leading-none tracking-tighter">
+  <div class="text-sm !leading-none font-medium tracking-tighter">
     Lembaga Pelawat
   </div>
-  <div class="-mt-0.5 text-3xl font-bold !leading-none tracking-tighter">
+  <div class="-mt-0.5 text-3xl !leading-none font-bold tracking-tighter">
     Kompleks
   </div>
-  <div class="-mt-0.5 text-xl font-bold !leading-none tracking-tighter">
+  <div class="-mt-0.5 text-xl !leading-none font-bold tracking-tighter">
     Penyayang BAKTI
   </div>
 </div>

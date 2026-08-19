@@ -1,38 +1,45 @@
-# create-svelte
+# Kompleks Penyayang BAKTI
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+The public-facing website for Lembaga Pelawat Kompleks Penyayang BAKTI. It is a
+single-page SvelteKit site containing the organisation's mission, board members,
+activities, contact details, and donation options.
 
-## Creating a project
+## Stack
 
-If you're seeing this, you've probably already done this step. Congrats!
+- Svelte 5 with SvelteKit 2
+- Vite 8
+- Tailwind CSS 4 through the official Vite plugin
+- TypeScript, ESLint, and Prettier
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Requirements
 
-# create a new project in my-app
-npm create svelte@latest my-app
+- Node.js 20.19 or newer
+- pnpm 11
+
+Install dependencies with:
+
+```sh
+pnpm install
 ```
 
-## Developing
+## Commands
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+```sh
+pnpm dev       # start the local development server
+pnpm check     # run Svelte and TypeScript diagnostics
+pnpm lint      # check formatting and lint the project
+pnpm build     # create a production build
+pnpm preview   # preview the production build locally
 ```
 
-## Building
+## Project structure
 
-To create a production version of your app:
+- `src/routes/+page.svelte` — the complete landing page and its content data
+- `src/routes/+layout.svelte` — global font, stylesheet, document metadata, and layout shell
+- `src/routes/+layout.ts` — prerenders the site for static hosting
+- `src/lib/components/logo.svelte` — site wordmark
+- `src/app.css` — Tailwind import and CSS-first theme tokens
+- `static/images` — source images and payment logos served at `/images/*`
 
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+The site uses `@sveltejs/adapter-static`; `pnpm build` writes the deployable
+static output to `build/`.

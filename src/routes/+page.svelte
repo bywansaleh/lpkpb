@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { balancer } from 'svelte-action-balancer';
-
   const activities = [
     { title: 'Program Bacaan Yaasin' },
     { title: 'Gotong-Royong Pembasmian Nyamuk Aedes' },
@@ -64,46 +62,44 @@
   ];
 
   function isLight(r: number, g: number, b: number) {
-    // HSP (Highly Sensitive Poo) equation from http://alienryderflex.com/hsp.html
+    // HSP (Highly Sensitive Perceived brightness) equation.
     const hsp = Math.sqrt(0.299 * (r * r) + 0.587 * (g * g) + 0.114 * (b * b));
 
-    // Using the HSP value, determine whether the color is light or dark
-    if (hsp > 127.5) {
-      return true;
-    }
-    return false;
+    return hsp > 127.5;
   }
 
-  const toRGB = function (str: string): { bg: string; text: string } {
-    var hash = 0;
+  function toRgb(str: string): { bg: string; text: string } {
+    let hash = 0;
 
-    for (var i = 0; i < str.length; i++) {
-      hash = str.charCodeAt(i) + ((hash << 5) - hash);
+    for (let index = 0; index < str.length; index += 1) {
+      hash = str.charCodeAt(index) + ((hash << 5) - hash);
       hash = hash & hash;
     }
-    var rgb = [0, 0, 0];
-    for (var i = 0; i < 3; i++) {
-      var value = (hash >> (i * 8)) & 255;
-      rgb[i] = value;
+
+    const rgb: [number, number, number] = [0, 0, 0];
+    for (let index = 0; index < 3; index += 1) {
+      const value = (hash >> (index * 8)) & 255;
+      rgb[index] = value;
     }
+
     return {
       bg: `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`,
       text: isLight(rgb[0], rgb[1], rgb[2]) ? '#000' : '#fff',
     };
-  };
+  }
 </script>
 
 <section
-  class="relative flex min-h-screen w-full items-end justify-start bg-brand py-10 text-white lg:py-40"
+  class="bg-brand relative flex min-h-screen w-full items-end justify-start py-10 text-white lg:py-40"
 >
   <img
     src="/images/kpb.jpg"
     alt=""
-    class="pointer-events-none absolute inset-0 h-full w-full select-none object-cover opacity-30 grayscale"
+    class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-30 grayscale select-none"
   />
   <div class="container w-full">
     <h1
-      class="relative text-7xl font-extrabold !leading-[0.9] !tracking-tighter drop-shadow-xl lg:text-9xl"
+      class="relative text-7xl !leading-[0.9] font-extrabold !tracking-tighter drop-shadow-xl lg:text-9xl"
     >
       Kebajikan integrasi untuk yang kurang bernasib baik
     </h1>
@@ -113,19 +109,22 @@
 <section class="min-h-screen bg-gray-900 py-10 text-white lg:py-20">
   <div class="container grid grid-cols-1 items-end gap-16 lg:grid-cols-2">
     <div>
-      <img src="/images/hands.jpg" alt="" class="rounded-3xl grayscale" />
+      <img
+        src="/images/hands.jpg"
+        alt="Tangan penghuni Kompleks Penyayang BAKTI"
+        class="rounded-3xl grayscale"
+        loading="lazy"
+      />
     </div>
     <div>
       <h2
-        class="text-5xl font-semibold !leading-[0.9] tracking-tight lg:text-7xl"
-        use:balancer
+        class="text-5xl !leading-[0.9] font-semibold tracking-tight text-balance lg:text-7xl"
       >
         Kami percaya dengan masa depan yang lebih baik untuk setiap insan.
       </h2>
 
       <p
-        class="mt-16 text-2xl font-semibold !leading-tight tracking-normal lg:text-4xl [&>span]:text-gray-400"
-        use:balancer
+        class="mt-16 text-xl !leading-tight font-normal tracking-normal text-balance lg:text-3xl [&>span]:text-gray-400"
       >
         Kompleks Penyayang BAKTI lahir atas dasar <span>kesedaran</span>
         terhadap perlunya <span>sebuah institusi</span> yang memberikan
@@ -139,9 +138,9 @@
 
 <section class="bg-brand py-10 text-white md:text-center lg:py-20">
   <div class="container">
-    <div class="mx-auto max-w-5xl" use:balancer>
+    <div class="mx-auto max-w-5xl text-balance">
       <p
-        class="mb-8 text-xl font-light !leading-tight tracking-normal lg:text-3xl"
+        class="mb-8 text-lg !leading-tight font-light tracking-normal lg:text-2xl"
       >
         Pewujudan kompleks ini adalah hasil gabungan tenaga Badan Amal Kebajikan
         Tenaga Isteri (BAKTI) sebagai badan NGO yang membangun kompleks ini
@@ -151,7 +150,7 @@
       </p>
 
       <p
-        class="text-2xl font-semibold !leading-tight tracking-normal lg:text-4xl"
+        class="text-2xl !leading-tight font-semibold tracking-normal lg:text-4xl"
       >
         Pakatan tiga pihak ini melambangkan keprihatinan setiap sektor
         masyarakat Malaysia terhadap mereka yang kurang bernasib baik serta
@@ -170,7 +169,7 @@
     </h3>
 
     <div class="flex flex-wrap justify-center">
-      {#each members as member}
+      {#each members as member (member.name)}
         <div
           class="flex w-full flex-col items-center p-6 text-center md:w-1/3 md:p-12"
         >
@@ -178,12 +177,12 @@
             <img
               src={member.picture}
               alt={member.name}
-              class="w-32 rounded-full bg-white object-cover object-top aspect-square md:w-40"
+              class="aspect-square w-32 rounded-full bg-white object-cover object-top md:w-40"
+              loading="lazy"
             />
           </div>
           <div
-            class="mb-4 mt-6 text-lg font-light !leading-tight md:text-2xl"
-            use:balancer
+            class="mt-6 mb-4 text-lg !leading-tight font-light text-balance md:text-2xl"
           >
             {member.name}
           </div>
@@ -209,14 +208,15 @@
     </h3>
 
     <div class="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
-      {#each activities as activity}
+      {#each activities as activity (activity.title)}
+        {@const color = toRgb(activity.title)}
         <div
-          class="flex flex-col justify-start rounded-xl bg-gray-500/10 p-4 md:rounded-3xl md:p-6 md:aspect-square"
-          style:background-color={toRGB(activity.title).bg}
+          class="flex aspect-video flex-col justify-start rounded-xl bg-gray-500/10 p-4 md:rounded-3xl md:p-6"
+          style:background-color={color.bg}
         >
           <h4
-            class="text-xl font-light !leading-[1.2] tracking-tighter opacity-80 sm:text-2xl md:text-3xl xl:text-4xl"
-            style:color={toRGB(activity.title).text}
+            class="text-lg !leading-[1.2] font-light tracking-tighter opacity-80 sm:text-xl md:text-2xl xl:text-3xl"
+            style:color={color.text}
           >
             {activity.title}
           </h4>
@@ -237,40 +237,43 @@
         Sumbangan ikhlas untuk penghuni boleh disalurkan melalui ToyyibPay
       </p>
 
-      <button
-        on:click={() =>
-          window.open('https://toyyibpay.com/penyayangbakti', '_blank')}
-        class="mt-4 rounded-full bg-[#624ec4] px-8 py-6 text-3xl text-white"
+      <a
+        href="https://toyyibpay.com/penyayangbakti"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-4 inline-flex rounded-full bg-[#624ec4] px-8 py-6 text-3xl text-white transition-colors hover:bg-[#5140ad] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#624ec4]"
         ><img
           src="/images/toyyibpay-logo-white.svg"
-          alt=""
+          alt="Sumbang melalui ToyyibPay"
           class="h-8"
-        /></button
-      >
+        />
+      </a>
 
-      <p class="mb-2 mt-12 text-lg font-semibold opacity-60 lg:mt-16">
+      <p class="mt-12 mb-2 text-lg font-semibold opacity-60 lg:mt-16">
         Atau transaksi terus kepada akaun
       </p>
       <p class="text-base font-bold md:text-lg">Maybank Islamic</p>
       <p class="mb-2 text-2xl font-extralight md:text-4xl">564397002361</p>
       <p
         class="mb-6 text-lg
-       font-semibold !leading-snug md:text-2xl"
+       !leading-snug font-semibold md:text-2xl"
       >
         LEMBAGA PELAWAT KOMP PENYAYANG BAKTI
       </p>
       <img
         src="/images/maybank-islamic.png"
-        alt=""
+        alt="Maybank Islamic"
         class="mt-2 w-60 rounded-xl"
+        loading="lazy"
       />
     </div>
 
     <div>
       <img
         src="/images/donate.jpg"
-        alt=""
-        class="rounded-3xl object-cover aspect-square"
+        alt="Sumbangan untuk penghuni Kompleks Penyayang BAKTI"
+        class="aspect-square rounded-3xl object-cover"
+        loading="lazy"
       />
     </div>
   </div>
