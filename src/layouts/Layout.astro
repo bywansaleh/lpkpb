@@ -1,12 +1,21 @@
+---
+import '@fontsource-variable/plus-jakarta-sans';
+import '../app.css';
+import Logo from '../components/Logo.astro';
+---
+
 <!doctype html>
 <html lang="ms">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%sveltekit.assets%/favicon.png" />
+    <link rel="icon" href="/favicon.png" />
     <meta name="viewport" content="width=device-width" />
     <meta name="theme-color" content="#0f766e" />
-
-    %sveltekit.head%
+    <title>Lembaga Pelawat Kompleks Penyayang BAKTI</title>
+    <meta
+      name="description"
+      content="Lembaga Pelawat Kompleks Penyayang BAKTI menyediakan khidmat kebajikan bersepadu untuk mereka yang kurang bernasib baik."
+    />
 
     <link
       rel="apple-touch-icon"
@@ -84,7 +93,11 @@
     <meta name="msapplication-config" content="/icons/browserconfig.xml" />
   </head>
 
-  <body data-sveltekit-preload-data="hover">
-    <div style="display: contents">%sveltekit.body%</div>
+  <body>
+    <nav aria-label="Utama" class="absolute top-0 right-0 left-0 z-50 py-8">
+      <div class="container"><Logo /></div>
+    </nav>
+
+    <slot />
   </body>
 </html>

@@ -1,16 +1,16 @@
 import eslint from '@eslint/js';
 import prettier from 'eslint-config-prettier';
-import svelte from 'eslint-plugin-svelte';
+import astro from 'eslint-plugin-astro';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
-export default tseslint.config(
+export default [
   {
-    ignores: ['.svelte-kit/**', 'build/**', 'node_modules/**'],
+    ignores: ['.astro/**', 'build/**', 'node_modules/**'],
   },
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
-  ...svelte.configs['flat/recommended'],
+  ...astro.configs.recommended,
   {
     languageOptions: {
       globals: {
@@ -19,13 +19,5 @@ export default tseslint.config(
       },
     },
   },
-  {
-    files: ['**/*.svelte'],
-    languageOptions: {
-      parserOptions: {
-        parser: tseslint.parser,
-      },
-    },
-  },
-  prettier
-);
+  prettier,
+];

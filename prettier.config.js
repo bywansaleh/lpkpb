@@ -1,9 +1,6 @@
-import * as tailwindPlugin from 'prettier-plugin-tailwindcss';
-import sveltePlugin from 'prettier-plugin-svelte';
-
 export default {
-  plugins: [sveltePlugin, tailwindPlugin],
-  overrides: [{ files: '*.svelte', options: { parser: 'svelte' } }],
+  plugins: ['prettier-plugin-astro', 'prettier-plugin-tailwindcss'],
+  overrides: [{ files: '*.astro', options: { parser: 'astro' } }],
   printWidth: 80,
   tabWidth: 2,
   useTabs: false,
